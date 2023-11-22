@@ -1,0 +1,181 @@
+ * {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui;
+        letter-spacing: 2px; 
+}
+
+body {
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+nav {
+    display: flex;
+    padding-left: 1200px;
+    margin-top: -45px;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 20px;
+    display: inline;
+}
+
+nav li a {
+    color:white;
+    text-decoration: none;
+}
+
+nav li:hover {
+    font-weight: bold;
+}
+
+header h2{
+    font-size: 40px;
+    padding: 15px;
+}
+
+header {
+    background-color: rgb(228, 131, 227);
+    width: 100%;
+    height: 80px;
+    color: white;
+}
+
+
+
+section h1 {
+    font-size: 50px;
+    color: white;
+}
+
+span {
+    color: black;
+}
+
+.siti {
+    color: white;
+}
+
+section h2 {
+    font-size: 35px;
+    color: rgb(255, 71, 255);
+}
+
+section p {
+    color: white;
+    font-size: 20px;
+}
+
+section {
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.hc {
+    width: 500px;
+    margin-left: 1000px;
+    margin-top: -500px;
+    position: absolute;
+}
+
+/* about */
+
+.about-me h1 {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    margin: 20px;
+    
+}
+
+.about-me p {
+    width: 50%;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+/* contact */
+
+.contact {
+    text-align: center;
+    font-size: 40px;
+}
+
+.main-img {
+    width: 30%;
+    height: 300px;
+    padding-left: 35px;
+    padding-left: 40px;
+    display: inline-block;
+
+}
+
+.img-ig {
+    width: 50%;
+    height: 150px;
+    display: flex;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.img-twit {
+    width: 50%;
+    height: 150px;
+    display:inline;
+    padding-top: 100px;
+}
+
+.img-mail {
+    width: 50%;
+    height: 150px;
+    display:inline;
+    padding-top: 10px;
+    padding-right: 30px;
+    
+}
+
+.txt-contents {
+    width:50%;
+    display:inline;
+    color:black;
+    font-size:40px;
+    padding-top: 20px;
+    text-align: center;
+    font-family:'Trebuchet MS';
+    padding-top: 300px;
+    padding-left:150px;
+}
+
+.contact h1 {
+    font-family:'Segoe UI';
+    padding-left: 10px;
+}
+
+.contact p {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.contact li {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+img {
+    margin-left: 85px;
+}
+
+.main-img:hover {
+    box-shadow: 5px 5px 5px 5px white;
+}
+
+footer {
+    background-color: rgb(205, 0, 224);
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 605px;
+}

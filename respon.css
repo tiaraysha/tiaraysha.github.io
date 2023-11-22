@@ -1,0 +1,46 @@
+@media screen and (max-width:726px) {
+    /* nav ul {
+        width: 100%;
+        background: gray;
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    } */
+
+    nav ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a{
+        color: white;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 300vh;
+        height: 40vh;
+        background: black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 50px;
+        transition: 2s;
+    }
+
+    .navlist a {
+        display: block;
+    }
+    
+    .sidebar {
+        display: block;
+    }
+}

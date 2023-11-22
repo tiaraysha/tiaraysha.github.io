@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* body {
+    background-image: url(https://i.pinimg.com/originals/a7/fe/d7/a7fed72aa0bb9cdb8ce085ceb48abea5.gif);
+    background-size: cover;
+} */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.judul {
+    margin: 30px 0;
+    letter-spacing: 4px;
+    font-size: 35px;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    flex:1 ;
+    text-align: right;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration:none;
+    color: black;
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.text1 {
+    /* flex-basis: 40%; */
+    /* position: relative; */
+    margin-left: 50px;
+}
+
+.text1 h1 {
+    font-size: 50px;
+    color: red;
+}
+
+.text1 h2 {
+    font-size: 45px;
+}
+
+.text1 p {
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.text2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.text2 .ning {
+    width: 90%;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px 12px rgb(239, 75, 75);
+}
+
+.social {
+    text-align: center;
+}
+
+.social img {
+    width: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.sidebar {
+    display: none;
+    width: 30px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    width: 300px;
+    background-color: gray;
+    opacity: .9;
+    transition: .3s;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li {
+    padding: 25px;
+}
+
+.sidebar ul li:hover {
+    background-color: red;
+    transition: .3s;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check {
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.about-me {
+    display: flex;
+}
+
+.about-me h1 {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.about-me h2 {
+    width: 50%;
+}
+
+/* .about {
+    display: flex;
+} */
+
+.skills {
+    margin: 100px 50px;
+    text-align: center;
+}
