@@ -18,6 +18,10 @@
         color: white;
     }
 
+    ul.navlist {
+        display: none;
+    }
+
     .menu {
         display: block;
     }
@@ -42,5 +46,44 @@
     
     .sidebar {
         display: block;
+    }
+
+    .row {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer {
+        display: block;
+        margin: 50px 50px;
+    }
+
+    .text-footer {
+        width: 100%;
+    }
+
+    .bawah {
+        /* width: 50%; */
+        /* align-items: center; */
+        justify-content: space-evenly;
+        margin:30px 0;
+    }
+
+    .contact {
+        border-radius: 15px;
+    }
+
+    .kontak {
+        display: block;
+        flex-direction: column;
+    }
+
+    .instagram {
+        margin-top: 20px;
+    }
+
+    .twitter {
+        margin-top: 20px;
     }
 }

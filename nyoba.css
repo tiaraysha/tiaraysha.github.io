@@ -24,6 +24,10 @@
     font-size: 35px;
 }
 
+span {
+    color: rgb(156, 32, 32);
+}
+
 .navbar {
     width: 100%;
     display: flex;
@@ -56,6 +60,10 @@ nav ul li a {
 nav ul li a:hover {
     font-weight: bold;
 }
+
+/* ul.navlist {
+    display: none;
+} */
 
 .row {
     display: flex;
@@ -145,23 +153,135 @@ nav ul li a:hover {
 }
 
 .about-me {
-    display: flex;
+    /* display: flex; */
 }
 
 .about-me h1 {
+    /* display: flex; */
     text-align: center;
-    margin: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: red;
 }
 
 .about-me h2 {
-    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    box-shadow: 5px 5px 5px 5px red;
+    text-align: center;
+    padding: 10px;
 }
 
-/* .about {
-    display: flex;
+.about {
+    /* display: flex;
+    justify-content: space-between;
+    margin: 10px; */
+}
+
+.skills h1 {
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.skills h2 {
+    box-shadow: 5px 5px 5px 5px red;
+    text-align: center;
+    padding: 10px;
+}
+
+.reward h1 {
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.reward h2 {
+    box-shadow: 5px 5px 5px 5px red;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contact {
+    text-align: center;
+    font-size: 50px;
+    background-color: rgb(234, 93, 93);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.text-contact h1 {
+    margin-top: 100px;
+    font-size: 45px;
+}
+
+/* .mail {
+    margin-top: 100px;
 } */
 
-.skills {
-    margin: 100px 50px;
+/* .instagram {
+    flex-direction: column;
+}
+
+.twitter {
+    flex-direction: column;
+} */
+
+.kontak img {
+    width: 50px;
+}
+
+.kontak {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+}
+
+.kontak a {
+    text-decoration: none;
+    color: black;
+}
+
+.duh1 {
+    display: flex;
+
+}
+
+.duh1 p {
+    padding: 20px 10px;
+}
+
+footer {
+    background-color: gray;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.footer   {
+    display: flex;
+    margin: 50px 100px;
+}
+
+.text-footer {
+    width: 40%;
+}
+
+.bawah {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 50px 100px;
+}   
+
+.copy {
     text-align: center;
+    padding: 30px;
+    font-weight: bold;
 }
