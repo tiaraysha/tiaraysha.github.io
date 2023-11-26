@@ -160,6 +160,8 @@
         align-items: center;
     }
 
+    .te
+
     .dicoding {
         margin-top: 30px;
     }
@@ -194,11 +196,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin:30px 30px;
     }
 
-    .dicoding {
-        margin-top: 30px;
+    .reward img {
+        width: 300px;
     }
+
+    /* .dicoding {
+        margin-top: 30px;
+    } */
 
     .Home {
         padding-left: -30px;
