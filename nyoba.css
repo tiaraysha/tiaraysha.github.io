@@ -97,7 +97,7 @@ nav ul li a:hover {
 .text2 .ning {
     width: 90%;
     border-radius: 10%;
-    box-shadow: 10px 10px 5px 12px rgb(239, 75, 75);
+    box-shadow: 5px 5px 5px 2px rgb(239, 75, 75);
 }
 
 .social {
@@ -271,7 +271,7 @@ li {
 
 .footer   {
     display: flex;
-    margin: 50px 100px;
+    margin: 50px 50px;
 }
 
 .text-footer {
