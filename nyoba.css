@@ -72,12 +72,6 @@ nav ul li a:hover {
     margin: 100px 0;
 }
 
-.text1 {
-    /* flex-basis: 40%; */
-    /* position: relative; */
-    margin-left: 50px;
-}
-
 .text1 h1 {
     font-size: 50px;
     color: red;
@@ -88,9 +82,10 @@ nav ul li a:hover {
 }
 
 .text1 p {
-    color: white;
+    color: gray;
     font-size: 15px;
     letter-spacing: 2px;
+    width: 60%;
 }
 
 .text2 {
@@ -152,51 +147,59 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-.about-me {
-    /* display: flex; */
-}
+/* .about-me {
+    width: 50%;
+} */
 
 .about-me h1 {
     /* display: flex; */
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     color: red;
 }
 
-.about-me h2 {
-    display: flex;
-    justify-content: space-around;
-    width: 95%;
-    box-shadow: 5px 5px 5px 5px red;
-    text-align: center;
-    padding: 10px;
+
+.about img {
+    width: 30%;
+    border-radius: 15px;
 }
 
-.about {
-    /* display: flex;
+
+.lah {
+    display: flex;
     justify-content: space-between;
-    margin: 10px; */
+}
+
+.lah h2 {
+    width: 50%;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .skills h1 {
     color: red;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .skills h2 {
-    box-shadow: 5px 5px 5px 5px red;
     text-align: center;
-    padding: 10px;
+}
+
+.reward img {
+    width: 400px;
+}
+
+.reward-space {
+    display: flex;
+    justify-content: space-between;
 }
 
 .reward h1 {
     color: red;
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .reward h2 {
@@ -205,6 +208,7 @@ nav ul li a:hover {
     padding: 10px;
     margin-bottom: 10px;
 }
+
 
 .contact {
     text-align: center;
