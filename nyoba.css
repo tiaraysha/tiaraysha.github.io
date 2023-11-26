@@ -209,7 +209,7 @@ nav ul li a:hover {
 .contact {
     text-align: center;
     font-size: 50px;
-    background-color: rgb(234, 93, 93);
+    background-color: rgb(253, 136, 136);
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }
@@ -257,6 +257,7 @@ nav ul li a:hover {
 
 footer {
     background-color: gray;
+    width: 100%;
 }
 
 li {
