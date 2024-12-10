@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="nyoba.css">
     <link rel="stylesheet" href="respon.css">
     <title>Web Portofolio</title>
+    <style>
+        /* Tambahan CSS untuk sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .menu {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
-    <input type="checkbox" id="check">
+    <!-- Sidebar -->
+    <input type="checkbox" id="check" hidden>
     <div class="sidebar">
         <ul class="side-list">
             <li><a href="index.html">Home</a></li>
@@ -20,84 +51,137 @@
         </ul>
     </div>
 
-    <div class="container">
-        <div class="navbar">
-            <h2 class="judul"><span>Tiara</span>ysha</h2>
-            <nav>
-                <ul class="navlist">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light bg-light py-3">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand">
+            <h2 class="judul m-0"><span>Tiara</span>ysha</h2>
+        </a>
+
+        <!-- Toggler Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
             </nav>
-            <label for="check" class="menu"><i class="fa-solid fa-bars" style="color: #000000;"></i></label>
-        </div>
-        
-
-    <main>
-
-        <div class="about">
-        <div class="about-me">
-           <h1>About Me</h1> <br>
-           <div class="lah">
-        <h2>Hello! I'm Tiara.  I was born in Bogor on November 18, 2007. I am a student at SMK Wikrama Bogor and majoring in software and game development. My hobbies are listening to music and watching movies. </h2>
-        <img src="img/titi abu.jpg" class="abu">
-        </div>
-        </div>    
-        
-        <div class="skills">
-            <h1>Skills</h1> <br>
-            <div class="lah">
-            <h2>Web programming<br>Web Development</h2>
-            <img src="img/Premium Photo _ Various computer equipment with programming code on screens on table in dark room, cyber security concept, copy space.jpeg" class="programming">
-        </div>
+            <label for="check" class="menu d-md-none"><i class="fa-solid fa-bars"></i></label>
         </div>
 
-        <div class="reward">
-            <h1>Achievement</h1> <br>
-            <div class="reward-space">
-            <img src="img/ratatype.webp" class="ratatype">
-            <img src="img/dicoding.png" class="dicoding">
+    <!-- Main Content -->
+    <main class="container my-5">
+
+        <!-- About Section -->
+        <div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title fw-bold fs-3">About Me</h5>
+                <p class="card-text">
+                    Hello! I am a web development focused student with knowledge in HTML, CSS, JavaScript, and experience using Laravel framework as well as API basics. I have a passion to continuously improve my skills in the latest technologies. With a great interest in technology and application development, I am ready to contribute in a team to complete innovative projects.
+                </p>
             </div>
         </div>
-    </div>  
-</div>
-     
+
+        <!-- Skills Section -->
+        <div class="card mb-5">
+            <div class="card-body">
+                <h5 class="card-title fw-bold fs-3">Skills</h5>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP (Laravel)</li>
+                    <li>Github</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="card m-auto mb-5 d-flex justify-content-center">
+            <div class="card-body">
+                <h5 class="card-title fw-bold fs-2">Project</h5>
+                <h4 class="fw-bold fs-5">Web Shop</h4>
+                <p class="card-text">Website menggunakan HTML dan CSS. Berisi halaman utama, tentang, dan kontak.</p>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner w-50">
+                    <div class="carousel-item active">
+                        <img src="/img/webshop (1).png" class="d-block w-100" alt="webshop 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/webshop (2).png" class="d-block w-100" alt="webshop 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/webshop (3).png" class="d-block w-100" alt="webshop 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <h4 class="fw-bold fs-5">Web Shop</h4>
+                <p class="card-text">Website menggunakan HTML dan CSS. Berisi halaman utama, tentang, dan kontak.</p>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner w-50">
+                    <div class="carousel-item active">
+                        <img src="/img/apotek (1).png" class="d-block w-100" alt="webshop 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/apotek (2).png" class="d-block w-100" alt="webshop 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/apotek (3).png" class="d-block w-100" alt="webshop 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/apotek (4).png" class="d-block w-100" alt="webshop 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer">
-            <div class="text-footer">
-        <h2 class="judul"><span>Tiara</span>ysha</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium incidunt perferendis culpa quo ad omnis voluptatum quos, eaque explicabo facilis non quia reiciendis a illo aperiam quis eum cupiditate.</p>
-            </div>
-        
-        <div class="bawah">
-        <div class="Home">
-            <h2>Home</h2> <br>
-            <li>About</li>
-            <li>Contact</li>
-        </div>
-
-        <div class="help">
-            <h2>Help</h2><br>
-            <li>Privacy and Policy</li>
-            <li>Term of Use</li>
-        </div>
-
-        <div class="sosial">
-            <h2>Social</h2><br>
-            <li>Email</li>
-            <li>Instagram</li>
-            <li>LinkedIn</li>
-        </div>
-        </div>
-        </div>
-
-        <div class="copy">
-            &copy Siti Tiaraysha Putri Azahra | 2023
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="text-center">
+            <h2 class="judul"><span>Tiara</span>ysha</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium incidunt perferendis culpa quo ad omnis voluptatum quos, eaque explicabo facilis non quia reiciendis a illo aperiam quis eum cupiditate.</p>
+            <p>&copy; Siti Tiaraysha Putri Azahra | 2023</p>
         </div>
     </footer>
-    
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
