@@ -1,633 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiaraysha Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiaraysha Portfolio</title>
+  
+  <!-- Font Poppins & Special Script Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Satisfy&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- SwiperJS CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              poppins: ["Poppins", "sans-serif"],
-            },
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            bloom: ["Satisfy", "cursive"],
+          },
+          colors: {
+            'bloom-pink': '#e15293',
+            'bloom-gold': '#f7e1a0',
+            'bloom-light-pink': '#fde2e8',
+            'bloom-green': '#9ed468',
           },
         },
-      };
-    </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body class="font-poppins text-gray-800 bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-      <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
-      >
-        <h1 class="text-2xl font-bold">
-          <span class="text-blue-600">Tiara</span
-          ><span class="text-gray-800">ysha</span>
-        </h1>
-        <div class="hidden md:flex space-x-6">
-          <a href="#about" class="hover:text-blue-600 transition">About</a>
-          <a href="#projects" class="hover:text-blue-600 transition"
-            >Projects</a
-          >
-          <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-        </div>
-        <div class="md:hidden">
-          <button id="menuBtn" class="text-gray-800">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-      </div>
-      <!-- Mobile menu -->
-      <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
-        <a href="#about" class="block py-2 hover:text-blue-600">About</a>
-        <a href="#projects" class="block py-2 hover:text-blue-600">Projects</a>
-        <a href="#contact" class="block py-2 hover:text-blue-600">Contact</a>
-      </div>
-    </nav>
+      },
+    };
+  </script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      color: #555;
+      background-color: #fce4ec;
+      background-image: 
+        radial-gradient(at 10% 20%, #fde2e8 0px, transparent 50%),
+        radial-gradient(at 80% 0%, #fce4ec 0px, transparent 50%),
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMCAwaDQwdjQwSDBWMHptMjAgMjBoMjB2MjBIMjBWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+      background-size: cover;
+    }
+    .font-bloom {
+      color: #e15293;
+      text-shadow: 1px 1px 2px rgba(247, 225, 160, 0.7);
+    }
+    .bloom-hover:hover {
+      transform: scale(1.03);
+      transition: all 0.3s ease;
+      filter: drop-shadow(0px 0px 8px rgba(225, 82, 147, 0.5));
+    }
+    .cv-button {
+      background: linear-gradient(45deg, #f7e1a0 0%, #ffe082 50%, #f7e1a0 100%);
+      background-size: 200% auto;
+      color: #fff;
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+      border-radius: 50px;
+      transition: background-position 0.5s ease;
+    }
+    .cv-button:hover {
+      background-position: right center;
+    }
+    #projects .grid > div {
+      border: 3px solid #fde2e8;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    /* Mengatur navigasi swiper agar terlihat jelas */
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 24px !important;
+      color: #e15293;
+    }
+  </style>
+</head>
+<body class="font-poppins text-gray-800">
 
-    <!-- Hero Section -->
-    <section id="about" class="container mx-auto px-4 pt-32 pb-16">
-      <div
-        class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-3xl shadow-lg p-8 md:p-16 flex flex-col-reverse md:flex-row items-center"
-      >
-        <div class="md:w-1/2 text-center md:text-left">
-          <h1 class="text-4xl font-semibold mb-2 hover:scale-105 transition">
-            Hello!
-          </h1>
-          <h2
-            class="text-2xl md:text-3xl font-bold text-gray-900 hover:scale-105 transition"
-          >
-            I'm Siti Tiaraysha<br />Putri Azahra
-          </h2>
-          <p class="mt-4 text-gray-600">
-            A passionate web developer who enjoys building functional, efficient, and well-structured applications. I focus on clean code, performance, and solving real-world problems through technology.
-          </p>
-          <a
-            href="#contact"
-            class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full mt-6 hover:scale-105 transition shadow-lg"
-            >Contact Me</a
-          >
-        </div>
-        <div class="md:w-1/2 mb-8 md:mb-0 text-center">
-          <img
-            src="img/tiara pink.png"
-            alt="Tiara Image"
-            class="rounded-xl shadow-lg max-w-xs mx-auto"
-          />
-        </div>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-3xl font-bold font-bloom">
+        <span>Tiaraysha</span>
+      </h1>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-bloom-pink transition">About Me</a>
+        <a href="#projects" class="hover:text-bloom-pink transition">Projects</a>
+        <a href="#contact" class="hover:text-bloom-pink transition">Contact</a>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Web Shop</h3>
-          <p class="text-gray-600 mb-3">
-            A simple online store website that displays product list, product
-            details, and shopping cart view, created using HTML and CSS without
-            JavaScript.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/webshop (1).png" alt="Webshop 1" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/webshop (2).png" alt="Webshop 2" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/webshop (3).png" alt="Webshop 3" class="w-full" />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Apotek App</h3>
-          <p class="text-gray-600 mb-3">
-            A web-based pharmacy management application built with Laravel,
-            including drug management features, sales transactions, and patient
-            data.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/apotek (1).png" alt="apotek 1" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/apotek (2).png" alt="apotek 2" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/apotek (3).png" alt="apotek 3" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/apotek (4).png" alt="apotek 3" class="w-full" />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Interest Calculator</h3>
-          <p class="text-gray-600 mb-3">
-            A web-based calculator that helps users compute simple and compound
-            interest based on input values like principal, rate, time, and
-            frequency
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="img/bunga mtk (1).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/bunga mtk (2).png"
-                  alt="bunga mtk 2"
-                  class="w-full"
-                />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Student Data Management</h3>
-          <p class="text-gray-600 mb-3">
-            Student data management application used to store, display, and
-            manage student information such as name, nis, and rayon.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="img/data siswa (1).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/data siswa (2).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">BMI Calculator</h3>
-          <p class="text-gray-600 mb-3">
-            A simple web application to calculate Body Mass Index (BMI) based on
-            weight and height inputs, and provide result categories such as
-            underweight, normal, or obese.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/imt (1).png" alt="bunga mtk 1" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/imt (2).png" alt="bunga mtk 1" class="w-full" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/imt (3).png" alt="bunga mtk 1" class="w-full" />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Public Complaint</h3>
-          <p class="text-gray-600 mb-3">
-            A Laravel-based public complaint system that facilitates online
-            reporting, follow-up, and management of complaints by officers.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (6).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (2).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (3).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (15).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (21).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (23).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (30).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/pengaduan masyarakat (31).png"
-                  alt="bunga mtk 1"
-                  class="w-full"
-                />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Weather App</h3>
-          <p class="text-gray-600 mb-3">
-            A React.js application that displays current weather information by
-            retrieving data from a public API, displaying temperature, weather
-            conditions, and user location.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/weather.png" alt="bunga mtk 1" class="w-full" />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Ticketing App</h3>
-          <p class="text-gray-600 mb-3">
-            Ticketing App is a Flutter-based ticket booking app designed to
-            provide a fast and convenient booking experience. Features include
-            event details, as well as a streamlined checkout process.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (1).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (2).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (3).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (4).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (5).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (6).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/ticketing app (7).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Library App</h3>
-          <p class="text-gray-600 mb-3">
-            A web-based library management application built with Laravel,
-            including book management features, member data, borrowing, and
-            returning.
-          </p>
-          <div class="swiper mySwiper rounded-lg overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="img/library (23).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (22).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (20).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (16).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (11).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (10).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="img/library (2).png"
-                  alt="bunga mtk 1"
-                  class="w-full h-[250px] object-contain"
-                />
-              </div>
-            </div>
-            <!-- Navigasi -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-gray-800">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
       </div>
-    </section>
+    </div>
+  </nav>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-white py-16 px-4">
-      <div class="container mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <p class="text-gray-600 mb-6">
-          Let's collaborate! Reach out to me via email or social media 👇
+  <!-- Hero Section -->
+  <section id="about" class="container mx-auto px-4 pt-32 pb-16">
+    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-16 flex flex-col md:flex-row items-center border-t-8 border-bloom-light-pink">
+      <div class="md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start gap-4">
+        <h1 class="text-6xl font-bloom mb-1 bloom-hover">Hello</h1>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">I'm Siti Tiaraysha Putri Azahra</h2>
+        <p class="text-gray-600 leading-relaxed max-w-xl">
+          A passionate web developer student focused on building clean and user-friendly experiences. I enjoy creating efficient solutions and solving real-world problems through clean code.
         </p>
-        <a
-          href="mailto:tiaraysha@example.com"
-          class="bg-blue-600 text-white px-6 py-3 rounded-full inline-block shadow hover:bg-blue-700 transition"
-        >
-          Send Email
-        </a>
-
-        <div class="mt-8 flex flex-col items-center gap-4 text-gray-600">
-          <!-- Ikon Sosial Media -->
-          <div class="flex items-center gap-6 text-2xl">
-            <!-- GitHub -->
-            <a
-              href="https://github.com/tiaraysha"
-              target="_blank"
-              class="hover:text-black transition"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <!-- Instagram -->
-            <a
-              href="https://instagram.com/tiarayshaa"
-              target="_blank"
-              class="hover:text-pink-600 transition"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/siti-tiaraysha-putri-azahra/"
-              target="_blank"
-              class="hover:text-pink-600 transition"
-            >
-              <i class="fab fa-linkedin mr-2"></i>
-            </a>
-            <!-- Email -->
-            <a
-              href="mailto:tiarayshaputri18@gmail.com"
-              class="hover:text-red-500 transition"
-            >
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-
-          <!-- Alamat Email Teks -->
-          <a
-            href="mailto:tiarayshaputri18@gmail.com"
-            class="text-sm text-gray-700 hover:text-red-500 hover:underline"
-          >
-            tiarayshaputri18@gmail.com
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <a href="#contact" class="inline-block bg-bloom-pink text-white px-8 py-3 rounded-full bloom-hover shadow-lg">
+            Connect With Me <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="Tiara CV 2026.pdf" download="Tiara CV 2026.pdf" class="cv-button inline-flex items-center px-8 py-3 rounded-full bloom-hover shadow-lg">
+            <i class="fas fa-download mr-3"></i> Download My CV
           </a>
         </div>
       </div>
-    </section>
+      <div class="md:w-1/2 mb-8 md:mb-0 text-center relative mt-10 md:mt-0">
+        <img src="img/titi.png" alt="Tiaraysha Image" class="rounded-3xl shadow-lg max-w-xs mx-auto border-4 border-bloom-light-pink relative z-10" />
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
-      >
-        <div>
-          <h3 class="text-xl font-bold">
-            <span class="text-blue-500">Tiara</span>ysha
-          </h3>
-          <p class="mt-2 text-gray-400">
-            A passionate web developer who enjoys building functional, efficient, and well-structured applications. I focus on clean code, performance, and solving real-world problems through technology.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Navigate</h4>
-          <ul class="space-y-1 text-gray-400">
-            <li>
-              <a href="#about" class="hover:underline hover:text-blue-400"
-                >About</a
-              >
-            </li>
-            <li>
-              <a href="#projects" class="hover:underline hover:text-blue-400"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="hover:underline hover:text-blue-400"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Help</h4>
-          <ul class="space-y-1 text-gray-400">
-            <li>
-              <a href="#" class="hover:underline hover:text-blue-400"
-                >Privacy Policy</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:underline hover:text-blue-400"
-                >Terms of Use</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Social</h4>
-          <ul class="space-y-1 text-gray-400">
-            <li>
-              <a href="mailto:tiarayshaputri18@gmail.com" class="hover:underline hover:text-blue-400"
-                ><i class="fa-solid fa-envelope mr-2"></i>Email</a
-              >
-            </li>
-            <li>
-              <a href="https://instagram.com/tiarayshaa" class="hover:underline hover:text-blue-400"
-                ><i class="fab fa-instagram mr-2"></i>Instagram</a
-              >
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/siti-tiaraysha-putri-azahra/" class="hover:underline hover:text-blue-400"
-                ><i class="fab fa-linkedin mr-2"></i>LinkedIn</a
-              >
-            </li>
-          </ul>
+  <!-- Projects Section (Tampilan Utama: Slider Biasa) -->
+  <section id="projects" class="container mx-auto px-4 py-16 bg-white rounded-3xl shadow-lg border-b-8 border-bloom-light-pink mb-16">
+    <h2 class="text-4xl font-bloom text-center mb-10 bloom-hover">My Featured Projects</h2>
+    
+    <div id="limitedProjects" class="grid md:grid-cols-2 gap-8 px-4">
+      <!-- Project 1 -->
+      <div class="bloom-hover">
+        <h3 class="text-xl font-semibold mb-2 font-bloom">Web Shop</h3>
+        <p class="text-gray-600 mb-3 text-sm">A simple online store interface built with HTML & CSS.</p>
+        <div class="swiper mySwiper rounded-xl overflow-hidden border border-gray-100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/webshop (1).png" alt="Webshop 1" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/webshop (2).png" alt="Webshop 2" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/webshop (3).png" alt="Webshop 3" class="w-full h-64 object-cover" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
-      <div
-        class="text-center mt-8 text-gray-500 border-t border-gray-700 pt-4 text-sm"
-      >
-        &copy; Siti Tiaraysha Putri Azahra | 2023
+      
+      <!-- Project 2 -->
+      <div class="bloom-hover">
+        <h3 class="text-xl font-semibold mb-2 font-bloom">Apotek App</h3>
+        <p class="text-gray-600 mb-3 text-sm">Pharmacy management web application built with Laravel.</p>
+        <div class="swiper mySwiper rounded-xl overflow-hidden border border-gray-100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/apotek (1).png" alt="Apotek 1" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/apotek (2).png" alt="Apotek 2" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/apotek (3).png" alt="Apotek 3" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/apotek (4).png" alt="Apotek 4" class="w-full h-64 object-cover" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       </div>
-    </footer>
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/a2e8d2d66a.js"
-      crossorigin="anonymous"
-    ></script>
+      <!-- Project 3 -->
+      <div class="bloom-hover">
+        <h3 class="text-xl font-semibold mb-2 font-bloom">Interest Calculator</h3>
+        <p class="text-gray-600 mb-3 text-sm">Web-based calculator for simple and compound interest.</p>
+        <div class="swiper mySwiper rounded-xl overflow-hidden border border-gray-100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/bunga mtk (1).png" alt="Interest 1" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/bunga mtk (2).png" alt="Interest 2" class="w-full h-64 object-cover" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      
+      <!-- Project 4 -->
+      <div class="bloom-hover">
+        <h3 class="text-xl font-semibold mb-2 font-bloom">Student Management</h3>
+        <p class="text-gray-600 mb-3 text-sm">Application to manage and store student data.</p>
+        <div class="swiper mySwiper rounded-xl overflow-hidden border border-gray-100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/data siswa (1).png" alt="Student 1" class="w-full h-64 object-cover" /></div>
+            <div class="swiper-slide"><img src="img/data siswa (2).png" alt="Student 2" class="w-full h-64 object-cover" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Toggle Mobile Menu -->
-    <script>
-      document.getElementById("menuBtn").addEventListener("click", function () {
-        const menu = document.getElementById("mobileMenu");
-        menu.classList.toggle("hidden");
+    <div class="text-center mt-12">
+      <button id="showAllBtn" class="bg-bloom-green text-white px-8 py-3 rounded-full bloom-hover shadow-lg">
+        Show All Projects <i class="fas fa-grid-2 ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <footer class="relative bg-gradient-to-b from-white to-[#fde2e8] text-gray-800 py-12 mt-auto border-t-8 border-bloom-light-pink overflow-hidden">
+    <!-- Ilustrasi Dekoratif Latar Belakang Footer -->
+    <div class="absolute -top-6 -left-6 text-bloom-pink opacity-20 text-5xl">
+      <i class="fas fa-heart"></i>
+    </div>
+    <div class="absolute bottom-6 right-6 text-bloom-gold opacity-40 text-4xl animate-pulse">
+      <i class="fas fa-star"></i>
+    </div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <!-- Logo / Nama Brand -->
+      <h3 class="text-4xl font-bold font-bloom mb-3 bloom-hover inline-block">
+        <span>Tiaraysha</span>
+      </h3>
+      
+      <!-- Sub-deskripsi Ringkas & Anggun -->
+      <p class="text-gray-600 text-sm max-w-md mx-auto leading-relaxed mb-6 font-poppins">
+        Web Developer Student | Crafting interfaces with love, code, and a touch of blossoms. Let's grow together! 🌸
+      </p>
+
+      <!-- Ikon Media Sosial Pendukung di Footer -->
+      <div class="flex justify-center gap-6 text-2xl mb-8">
+        <a href="https://github.com/tiaraysha" target="_blank" class="hover:text-black transition-colors duration-300">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/tiarayshaa" target="_blank" class="text-bloom-pink hover:text-pink-700 transition-colors duration-300">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/siti-tiaraysha-putri-azahra/" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      
+      <!-- Copyright & Quotes Note -->
+      <div class="text-xs text-gray-400 border-t border-pink-200 pt-4 max-w-xs mx-auto tracking-wide">
+        &copy; 2026 Siti Tiaraysha Putri Azahra <br>
+        <span class="text-bloom-pink font-semibold">"Bloom where you are planted."</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POP-UP 1: DAFTAR SEMUA PROYEK (Hanya berupa Card Grid Statis, Gambar Tidak Kecil) -->
+  <div id="projectsModal" class="fixed inset-0 bg-gray-900 bg-opacity-70 z-40 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-6xl h-[85vh] overflow-y-auto p-6 md:p-10 relative border-t-8 border-bloom-green">
+      <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center shadow-inner">&times;</button>
+      
+      <h2 class="text-4xl font-bloom text-center mb-10">My Projects</h2>
+      <p class="text-center text-sm text-gray-400 -mt-8 mb-8">💡 Klik proyek untuk melihat detail</p>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card Proyek 1 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Web Shop" data-desc="HTML & CSS simple online store interface." 
+             data-images="img/webshop (1).png,img/webshop (2).png,img/webshop (3).png">
+          <img src="img/webshop (1).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Web Shop</h3>
+          <p class="text-xs text-gray-500">HTML & CSS Store</p>
+        </div>
+
+        <!-- Card Proyek 2 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Apotek App" data-desc="Laravel pharmacy management application system." 
+             data-images="img/apotek (1).png,img/apotek (2).png,img/apotek (3).png,img/apotek (4).png">
+          <img src="img/apotek (1).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Apotek App</h3>
+          <p class="text-xs text-gray-500">Laravel Framework</p>
+        </div>
+
+        <!-- Card Proyek 3 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Interest Calculator" data-desc="Simple and compound interest calculation system." 
+             data-images="img/bunga mtk (1).png,img/bunga mtk (2).png">
+          <img src="img/bunga mtk (1).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Interest Calculator</h3>
+          <p class="text-xs text-gray-500">Javascript & Mathematics</p>
+        </div>
+
+        <!-- Card Proyek 4 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Student Management" data-desc="A system developed to manage and organize active student databases." 
+             data-images="img/data siswa (1).png,img/data siswa (2).png">
+          <img src="img/data siswa (1).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Student Management</h3>
+          <p class="text-xs text-gray-500">Database Crud App</p>
+        </div>
+
+        <!-- Card Proyek 5 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Public Complaint" data-desc="Public complaint management system created using Laravel framework." 
+             data-images="img/pengaduan masyarakat (2).png, img/pengaduan masyarakat (3).png, img/pengaduan masyarakat (6).png,img/pengaduan masyarakat (15).png,img/pengaduan masyarakat (21).png,img/pengaduan masyarakat (23).png,img/pengaduan masyarakat (30).png, img/pengaduan masyarakat (31).png">
+          <img src="img/pengaduan masyarakat (6).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Public Complaint</h3>
+          <p class="text-xs text-gray-500">Laravel Fullstack</p>
+        </div>
+
+        <!-- Card Proyek 6 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Ticketing App" data-desc="Beautiful mobile apps ticket booking interface template using Flutter framework." 
+             data-images="img/ticketing app (1).png,img/ticketing app (2).png,img/ticketing app (3).png,img/ticketing app (4).png,img/ticketing app (5).png,img/ticketing app (6).png,img/ticketing app (7).png">
+          <img src="img/ticketing app (1).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Ticketing App</h3>
+          <p class="text-xs text-gray-500">Flutter Mobile UI</p>
+        </div>
+
+        <!-- Card Proyek 7 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Weather App" data-desc="Real-time global tracking weather platform utilizing React JS and APIs." 
+             data-images="img/weather app.png">
+          <img src="img/weather.png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Weather App</h3>
+          <p class="text-xs text-gray-500">React JS API</p>
+        </div>
+
+        <!-- Card Proyek 8 -->
+        <div class="project-card cursor-pointer bg-gray-50 border border-gray-200 rounded-2xl p-3 hover:border-bloom-pink transition" 
+             data-title="Library App" data-desc="Digital book tracking and storage library service application." 
+             data-images="img/library (10).png,img/library (11).png,img/library (2).png, img/library (16).png,img/library (20).png,img/library (22).png,img/library (23).png">
+          <img src="img/library (10).png" class="w-full h-48 object-cover rounded-xl mb-3 shadow" />
+          <h3 class="text-lg font-bold text-gray-800 font-bloom">Library App</h3>
+          <p class="text-xs text-gray-500">Web Application</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- POP-UP 2: DETAIL PROYEK + SWIPER BESAR (Otomatis muncul pas card di-klik) -->
+  <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md">
+    <div class="bg-white rounded-3xl w-full max-w-4xl p-6 relative max-h-[95vh] overflow-y-auto border-t-8 border-bloom-pink">
+      <button id="closeDetailModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center shadow z-10">&times;</button>
+      
+      <h3 id="modalProjectTitle" class="text-3xl font-bold font-bloom mb-2 text-center">Project Title</h3>
+      <p id="modalProjectDesc" class="text-sm text-gray-600 text-center mb-6 px-6">Project description goes here...</p>
+      
+      <!-- Container Swiper Utama Detail -->
+      <div class="swiper detailSwiper rounded-2xl overflow-hidden border border-gray-100 shadow-xl max-w-3xl mx-auto">
+        <div class="swiper-wrapper" id="modalSwiperWrapper">
+          <!-- Slide Gambar akan dirender otomatis melalui JavaScript -->
+        </div>
+        <!-- Tombol Navigasi Slider -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SwiperJS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script>
+    // Inisialisasi Swiper Utama di Halaman Depan
+    const mainSwipers = new Swiper(".mySwiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // Ambil Elemen DOM Modals
+    const showAllBtn = document.getElementById("showAllBtn");
+    const projectsModal = document.getElementById("projectsModal");
+    const closeModal = document.getElementById("closeModal");
+    
+    const detailModal = document.getElementById("detailModal");
+    const closeDetailModal = document.getElementById("closeDetailModal");
+    const projectCards = document.querySelectorAll(".project-card");
+    
+    let detailSwiperInstance = null;
+
+    // Logic Menampilkan Pop-Up 1 (Semua Proyek)
+    showAllBtn.addEventListener("click", () => {
+      projectsModal.classList.remove("hidden");
+    });
+    closeModal.addEventListener("click", () => {
+      projectsModal.classList.add("hidden");
+    });
+
+    // Logic Klik Card Proyek -> Membuka Pop-Up 2 (Detail Gallery + Swiper Jelas)
+    projectCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const title = card.getAttribute("data-title");
+        const desc = card.getAttribute("data-desc");
+        const imagesRaw = card.getAttribute("data-images");
+        const imagesArray = imagesRaw ? imagesRaw.split(",") : [];
+
+        // Set Judul dan Deskripsi Modal Kedua
+        document.getElementById("modalProjectTitle").innerText = title;
+        document.getElementById("modalProjectDesc").innerText = desc;
+
+        // Reset & Susun Slide Gambar Baru
+        const wrapper = document.getElementById("modalSwiperWrapper");
+        wrapper.innerHTML = ""; 
+
+        imagesArray.forEach(imgUrl => {
+          const slide = document.createElement("div");
+          slide.className = "swiper-slide flex justify-center bg-gray-100";
+          // Tinggi diset h-[450px] agar gambar screenshot besar dan proporsional
+          slide.innerHTML = `<img src="${imgUrl.trim()}" alt="${title}" class="w-full h-[450px] object-contain mx-auto" />`;
+          wrapper.appendChild(slide);
+        });
+
+        // Tampilkan Modal Detail Kedua
+        detailModal.classList.remove("hidden");
+
+        // Inisialisasi Ulang Swiper Khusus di Modal Detail agar dimensinya dihitung pas
+        if (detailSwiperInstance) {
+          detailSwiperInstance.destroy(true, true);
+        }
+
+        setTimeout(() => {
+          detailSwiperInstance = new Swiper(".detailSwiper", {
+            loop: imagesArray.length > 1,
+            observer: true,
+            observeParents: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        }, 50);
       });
-    </script>
+    });
 
-    <!-- SwiperJS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".mySwiper", {
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    </script>
-  </body>
+    // Menutup Pop-Up Detail Kedua
+    closeDetailModal.addEventListener("click", () => {
+      detailModal.classList.add("hidden");
+    });
+
+    // Tutup Modal jika area luar diklik
+    window.addEventListener("click", (e) => {
+      if (e.target === projectsModal) projectsModal.classList.add("hidden");
+      if (e.target === detailModal) detailModal.classList.add("hidden");
+    });
+  </script>
+</body>
 </html>
